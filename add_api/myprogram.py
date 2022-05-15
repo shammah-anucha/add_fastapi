@@ -75,24 +75,3 @@ async def update_user(user_update: UserUpdateRequest, user_id: UUID):
     raise HTTPException(
         status_code=404, detail=f"user with id {user_id} does not exist"
     )
-
-
-# class Item(BaseModel):
-#     name: str
-#     description: Optional[str] = None
-#     price: float
-#     tax: Optional[float] = None
-
-
-# @app.post("/items/")
-# async def create_item(item: Item):
-#     item_dict = item.dict()
-#     if item.tax:
-#         price_with_tax = item.price + item.tax
-#         item_dict.update({"price_with_tax": price_with_tax})
-#     return item
-
-
-# @app.put("/items/{item_id}")
-# async def create_item(item_id: int, item: Item):
-#     return {"item_id": item_id, **item.dict()}
